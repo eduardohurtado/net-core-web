@@ -26,32 +26,27 @@ namespace net_core_web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+            DefaultFilesOptions d = new DefaultFilesOptions();
+            d.DefaultFileNames.Clear();
+            d.DefaultFileNames.Add("index.html");
 
-            app.Use(async (context, next) =>
+            app.UseDefaultFiles(d);
+            app.UseStaticFiles();
+
+            app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello from 1st delegate \n");
-                await next.Invoke();
+                await context.Response.WriteAsync("Run method");
             });
 
-            app.Use(async (context, next) =>
-            {
-                await context.Response.WriteAsync("Hello from 2nd delegate \n");
-                await next.Invoke();
-            });
+            // app.UseRouting();
 
-            app.Run(async context =>
-            {
-                await context.Response.WriteAsync("Hello from 3rd delegate");
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
-                });
-            });
+            // app.UseEndpoints(endpoints =>
+            // {
+            //     endpoints.MapGet("/", async context =>
+            //     {
+            //         await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
+            //     });
+            // });
         }
     }
 }
