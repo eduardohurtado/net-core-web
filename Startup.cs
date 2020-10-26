@@ -30,12 +30,19 @@ namespace net_core_web
 
             app.Use(async (context, next) =>
             {
+                await context.Response.WriteAsync("Hello from 1st delegate \n");
+                await next.Invoke();
+            });
+
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("Hello from 2nd delegate \n");
                 await next.Invoke();
             });
 
             app.Run(async context =>
             {
-                await context.Response.WriteAsync("Hello from 2nd delegate");
+                await context.Response.WriteAsync("Hello from 3rd delegate");
             });
 
             app.UseEndpoints(endpoints =>
