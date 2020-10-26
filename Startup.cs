@@ -28,6 +28,16 @@ namespace net_core_web
 
             app.UseRouting();
 
+            app.Use(async (context, next) =>
+            {
+                await next.Invoke();
+            });
+
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Hello from 2nd delegate");
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
