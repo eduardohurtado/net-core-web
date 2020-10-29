@@ -25,6 +25,10 @@ namespace net_core_web
             {
                 app.UseDeveloperExceptionPage();
             }
+            else if (env.IsStaging() || env.IsProduction())
+            {
+                app.UseExceptionHandler("/Error");
+            }
 
             DefaultFilesOptions d = new DefaultFilesOptions();
             d.DefaultFileNames.Clear();
@@ -35,7 +39,7 @@ namespace net_core_web
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Run method");
+                await context.Response.WriteAsync("Environment: " + env.EnvironmentName);
             });
 
             // app.UseRouting();
