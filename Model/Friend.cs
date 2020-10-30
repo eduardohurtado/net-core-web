@@ -1,6 +1,6 @@
 using System;
 
-namespace net_core_web
+namespace net_core_web.Model
 {
     public class Friend
     {

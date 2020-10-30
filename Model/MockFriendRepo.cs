@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace net_core_web
+namespace net_core_web.Model
 {
     public class MockFriendRepo : IFriendStore
     {

@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Home/DataFriend.cshtml",
+      "TargetPath": "Views\\Home\\DataFriend.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"

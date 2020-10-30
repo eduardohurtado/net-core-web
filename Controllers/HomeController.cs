@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using net_core_web.Model;
+using net_core_web.ViewModels;
 
 namespace net_core_web
 {
@@ -45,6 +47,15 @@ namespace net_core_web
             ViewBag.Friend = dataFriend;
 
             return View(dataFriend);
+        }
+
+        public ViewResult DataFriend()
+        {
+            ViewDetails details = new ViewDetails();
+            details.Friend = friendStore.friendGetData(2);
+            details.Title = "Data from DataFriend<ViewDetails>";
+
+            return View(details);
         }
     }
 }
