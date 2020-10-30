@@ -14390,6 +14390,17 @@
     "CSharpLanguageVersion": 800
   },
   "RootNamespace": "net_core_web",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Home/Details.cshtml",
+      "TargetPath": "Views\\Home\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }

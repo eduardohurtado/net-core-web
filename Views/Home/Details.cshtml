@@ -1,0 +1,64 @@
+@model net_core_web.Friend
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC App</title>
+</head>
+
+<body>
+    <h1>Hello world from MVC.</h1>
+
+    <h2>@ViewData["HeadTitle"]</h2>
+    @{
+        var friendData = ViewData["Friend"] as net_core_web.Friend;
+    }
+
+    <div>
+        <p>
+            Name: @friendData.Name
+        </p>
+        <p>
+            Mail: @friendData.Email
+        </p>
+        <p>
+            City: @friendData.City
+        </p>
+    </div>
+
+    <h2>@ViewBag.Title</h2>
+    @{
+        var friendBag = ViewBag.Friend as net_core_web.Friend;
+    }
+
+    <div>
+        <p>
+            Name: @friendBag.Name
+        </p>
+        <p>
+            Mail: @friendBag.Email
+        </p>
+        <p>
+            City: @friendBag.City
+        </p>
+    </div>
+
+    @* Strongly typed by "@model net_core_web.Friend" *@
+    <h2>Strongly typed</h2>
+
+    <div>
+        <p>
+            Name: @friendBag.Name
+        </p>
+        <p>
+            Mail: @friendBag.Email
+        </p>
+        <p>
+            City: @friendBag.City
+        </p>
+    </div>
+</body>
+
+</html>

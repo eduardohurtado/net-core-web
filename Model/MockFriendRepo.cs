@@ -6,7 +6,7 @@ namespace net_core_web
     public class MockFriendRepo : IFriendStore
     {
         private List<Friend> friendList;
-        
+
         // Constructor
         public MockFriendRepo()
         {

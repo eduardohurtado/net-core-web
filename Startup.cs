@@ -17,6 +17,8 @@ namespace net_core_web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            // Instance store just one time on.
+            services.AddSingleton<IFriendStore, MockFriendRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
