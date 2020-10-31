@@ -12,7 +12,22 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "/home/usc/Documents/Developer/Git projects/net-core-web/Views/_ViewImports.cshtml"
+using net_core_web.Model;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "/home/usc/Documents/Developer/Git projects/net-core-web/Views/_ViewImports.cshtml"
+using net_core_web.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2127db8a7deaa2312752c8db04b7e61dc9baf829", @"/Views/Shared/_Layout.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"39fd805b18be2e3da14ea6452ea3f7e266ff9019", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -41,7 +56,7 @@ namespace AspNetCore
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"en\">\n\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2127db8a7deaa2312752c8db04b7e61dc9baf8292694", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2127db8a7deaa2312752c8db04b7e61dc9baf8293226", async() => {
                 WriteLiteral("\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>");
 #nullable restore
 #line 7 "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Shared/_Layout.cshtml"
@@ -63,7 +78,7 @@ namespace AspNetCore
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2127db8a7deaa2312752c8db04b7e61dc9baf8293995", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2127db8a7deaa2312752c8db04b7e61dc9baf8294527", async() => {
                 WriteLiteral("\n    <div>\n        ");
 #nullable restore
 #line 12 "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Shared/_Layout.cshtml"

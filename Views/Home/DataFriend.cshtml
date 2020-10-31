@@ -1,29 +1,22 @@
-@model net_core_web.ViewModels.ViewDetails
-<!DOCTYPE html>
-<html lang="en">
+@model ViewDetails
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataFriend Page</title>
-</head>
+@{
+    @* Layout = "~/Views/Shared/_Layout.cshtml"; *@
+    ViewBag.Title = "MVC App";
+}
 
-<body>
-    <h1>Hello world from ViewModels</h1>
+<h1>Hello world from ViewModels</h1>
 
-    <h2>@Model.Title</h2>
+<h2>@Model.Title</h2>
 
-    <div>
-        <p>
-            Name: @Model.Friend.Name
-        </p>
-        <p>
-            Mail: @Model.Friend.Email
-        </p>
-        <p>
-            City: @Model.Friend.City
-        </p>
-    </div>
-</body>
-
-</html>
+<div>
+    <p>
+        Name: @Model.Friend.Name
+    </p>
+    <p>
+        Mail: @Model.Friend.Email
+    </p>
+    <p>
+        City: @Model.Friend.City
+    </p>
+</div>
