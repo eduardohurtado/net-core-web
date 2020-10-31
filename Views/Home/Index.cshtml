@@ -1,34 +1,32 @@
 @model List<net_core_web.Model.Friend>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVC App</title>
-</head>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MVC App";
+}
 
-<body>
-    <p>Hello world from MVC (Index).</p>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>City</th>
-        </tr>
-        <tr>
-            @foreach (var friend in Model)
-            {
-                <tr>
-                    <td>@friend.Id</td>
-                    <td>@friend.Name</td>
-                    <td>@friend.Email</td>
-                    <td>@friend.City</td>
-                </tr>
-            }
-        </tr>
-    </table>
-</body>
+<p>Hello world from MVC (Index).</p>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        @foreach (var friend in Model)
+        {
+            <tr>
+                <td>@friend.Id</td>
+                <td>@friend.Name</td>
+                <td>@friend.Email</td>
+                <td>@friend.City</td>
+            </tr>
+        }
+    </tr>
+</table>
 
-</html>
+@section Scripts
+{
+    <script src=""></script>
+}

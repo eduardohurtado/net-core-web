@@ -31,3 +31,4 @@
 /home/usc/Documents/Developer/Git projects/net-core-web/obj/Debug/netcoreapp3.1/net-core-web.csproj.CopyComplete
 /home/usc/Documents/Developer/Git projects/net-core-web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /home/usc/Documents/Developer/Git projects/net-core-web/obj/Debug/netcoreapp3.1/Razor/Views/Home/DataFriend.cshtml.g.cs
+/home/usc/Documents/Developer/Git projects/net-core-web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs

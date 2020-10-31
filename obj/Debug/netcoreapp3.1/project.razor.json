@@ -14392,6 +14392,11 @@
   "RootNamespace": "net_core_web",
   "Documents": [
     {
+      "FilePath": "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/usc/Documents/Developer/Git projects/net-core-web/Views/Home/Details.cshtml",
       "TargetPath": "Views\\Home\\Details.cshtml",
       "FileKind": "mvc"
