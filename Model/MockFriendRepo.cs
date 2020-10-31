@@ -38,5 +38,10 @@ namespace net_core_web.Model
         {
             return this.friendList.FirstOrDefault(e => e.Id == Id);
         }
+
+        public List<Friend> getAllFriends()
+        {
+            return friendList;
+        }
     }
 }

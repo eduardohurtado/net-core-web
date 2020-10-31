@@ -26,8 +26,8 @@ namespace net_core_web
 
         public ViewResult Index()
         {
-            Friend model = friendStore.friendGetData(1);
-            return View(model);
+            var allFriends = friendStore.getAllFriends();
+            return View(allFriends);
         }
 
         // public JsonResult Details()

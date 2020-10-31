@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace net_core_web.Model
 {
@@ -6,5 +7,6 @@ namespace net_core_web.Model
     {
         // Return <-- Method(Parameters)
         Friend friendGetData(int Id);
+        List<Friend> getAllFriends();
     }
 }
