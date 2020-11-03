@@ -1,0 +1,6 @@
+# development
+/bin
+/obj
+
+# misc
+/.vscode
