@@ -5,7 +5,24 @@
     ViewBag.Title = "MVC App";
 }
 
-<p>Hello world from MVC (Index).</p>
+<div class="card-deck">
+    @foreach (var friend in Model)
+        {
+            <div class="card m-3" >
+                <div class="card-header">
+                    <h3>@friend.Name</h3>
+                </div>
+                <img class="card-img-top" src="~/images/NET_core.png" alt="image" />
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">Show</a>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        }
+</div>
+
+@* <p>Hello world from MVC (Index).</p>
 <table>
     <tr>
         <th>ID</th>
@@ -24,7 +41,7 @@
             </tr>
         }
     </tr>
-</table>
+</table> *@
 
 @section Scripts
 {
