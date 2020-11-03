@@ -1,7 +1,6 @@
 @model List<Friend>
 
 @{
-    @* Layout = "~/Views/Shared/_Layout.cshtml"; *@
     ViewBag.Title = "MVC App";
 }
 
@@ -12,36 +11,23 @@
                 <div class="card-header">
                     <h3>@friend.Name</h3>
                 </div>
-                <img class="card-img-top" src="~/images/NET_core.png" alt="image" />
+                <img    class="card-img-top"
+                        src="~/images/NET_core.png"
+                        alt="image"
+                        asp-append-version="true"
+                />
                 <div class="card-footer text-center">
-                    <a href="#" class="btn btn-primary">Show</a>
+                    <a  asp-controller="home"
+                        asp-action="datafriend"
+                        asp-route-id="@friend.Id"
+                        class="btn btn-primary">Show
+                    </a>
                     <a href="#" class="btn btn-primary">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </div>
             </div>
         }
 </div>
-
-@* <p>Hello world from MVC (Index).</p>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>City</th>
-    </tr>
-    <tr>
-        @foreach (var friend in Model)
-        {
-            <tr>
-                <td>@friend.Id</td>
-                <td>@friend.Name</td>
-                <td>@friend.Email</td>
-                <td>@friend.City</td>
-            </tr>
-        }
-    </tr>
-</table> *@
 
 @section Scripts
 {
