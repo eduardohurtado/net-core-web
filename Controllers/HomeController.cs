@@ -24,6 +24,10 @@ namespace net_core_web
         //     return friendStore.friendGetData(1).Email;
         // }
 
+        // Attribute routing
+        [Route("")]
+        [Route("Home")]
+        [Route("Home/Index")]
         public ViewResult Index()
         {
             var allFriends = friendStore.getAllFriends();
@@ -36,7 +40,9 @@ namespace net_core_web
         //     return Json(model);
         // }
 
-        public ViewResult Details()
+        // Attribute routing
+        [Route("Home/Details/{id?}")]
+        public ViewResult Details(int id)
         {
             Friend dataFriend = friendStore.friendGetData(2);
 
@@ -49,10 +55,13 @@ namespace net_core_web
             return View(dataFriend);
         }
 
-        public ViewResult DataFriend()
+        // Attribute routing
+        [Route("Home/DataFriend/{id?}")]
+        public ViewResult DataFriend(int? id)
         {
+
             ViewDetails details = new ViewDetails();
-            details.Friend = friendStore.friendGetData(2);
+            details.Friend = friendStore.friendGetData(id ?? 1);
             details.Title = "Data from DataFriend<ViewDetails>";
 
             return View(details);

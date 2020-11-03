@@ -40,7 +40,15 @@ namespace net_core_web
             // app.UseDefaultFiles(d);
 
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+
+            // Default routing
+            // app.UseMvcWithDefaultRoute();
+
+            // Custom routing MVC
+            // app.UseMvc(routes =>
+            // {
+            //     routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            // });
 
             // app.Run(async (context) =>
             // {
@@ -56,6 +64,8 @@ namespace net_core_web
             //         await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
             //     });
             // });
+
+            app.UseMvc();
         }
     }
 }
