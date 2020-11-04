@@ -1,0 +1,13 @@
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+.customMargin {
+  margin: 30px 30px;
+  display: flex;
+  justify-content: center;
+}

@@ -16,21 +16,21 @@ namespace net_core_web.Model
                 Id = 1,
                 Name = "Edward",
                 Email = "lol@gmail.com",
-                City = "Buenaventura"
+                City = Province.Buenaventura
             });
             friendList.Add(new Friend()
             {
                 Id = 2,
                 Name = "Christian",
                 Email = "lmao@gmail.com",
-                City = "Cali"
+                City = Province.Cali
             });
             friendList.Add(new Friend()
             {
                 Id = 3,
                 Name = "Miguel",
                 Email = "rofl@gmail.com",
-                City = "Bogota"
+                City = Province.Bogota
             });
         }
 
@@ -42,6 +42,13 @@ namespace net_core_web.Model
         public List<Friend> getAllFriends()
         {
             return friendList;
+        }
+
+        public Friend newFriend(Friend friend)
+        {
+            friend.Id = friendList.Max(e => e.Id) + 1;
+            friendList.Add(friend);
+            return friend;
         }
     }
 }

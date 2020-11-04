@@ -66,5 +66,20 @@ namespace net_core_web
 
             return View(details);
         }
+
+        [Route("Home/Create")]
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+
+        [Route("Home/Create")]
+        [HttpPost]
+        public RedirectToActionResult Create(Friend e)
+        {
+            Friend friend = friendStore.newFriend(e);
+            return RedirectToAction("DataFriend", new { id = friend.Id });
+        }
     }
 }

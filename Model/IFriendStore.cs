@@ -8,5 +8,6 @@ namespace net_core_web.Model
         // Return <-- Method(Parameters)
         Friend friendGetData(int Id);
         List<Friend> getAllFriends();
+        Friend newFriend(Friend friend);
     }
 }

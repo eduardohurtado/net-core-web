@@ -19,11 +19,7 @@ x64/
 [Bb]in/
 [Oo]bj/
 # build folder is nowadays used for build scripts and should not be ignored
-<<<<<<< HEAD
 build/
-=======
-#build/
->>>>>>> 25e033401454b10c80e2009e0bb738e802366fff
 
 # NuGet Packages
 *.nupkg
@@ -217,11 +213,7 @@ project.lock.json
 
 # Output folder used by Webpack or other FE stuff
 **/node_modules/*
-<<<<<<< HEAD
 # **/wwwroot/*
-=======
-**/wwwroot/*
->>>>>>> 25e033401454b10c80e2009e0bb738e802366fff
 
 # SpecFlow specific
 *.feature.cs
