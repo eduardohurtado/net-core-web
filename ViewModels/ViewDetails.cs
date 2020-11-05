@@ -9,6 +9,7 @@ namespace net_core_web.ViewModels
     public class ViewDetails
     {
         public string Title { get; set; }
+
         public Friend Friend { get; set; }
     }
 }

@@ -50,5 +50,29 @@ namespace net_core_web.Model
             friendList.Add(friend);
             return friend;
         }
+
+        public Friend modifyFriend(Friend friendModify)
+        {
+            Friend friend = friendList.FirstOrDefault(e => e.Id == friendModify.Id);
+            if (friend != null)
+            {
+                friend.Name = friendModify.Name;
+                friend.Email = friendModify.Email;
+                friend.City = friendModify.City;
+            }
+
+            return friend;
+        }
+
+        public Friend deleteFriend(int id)
+        {
+            Friend friend = friendList.FirstOrDefault(e => e.Id == id);
+            if (friend != null)
+            {
+                friendList.Remove(friend);
+            }
+
+            return friend;
+        }
     }
 }

@@ -68,14 +68,13 @@ namespace net_core_web
         }
 
         [Route("Home/Create")]
-        [HttpGet]
         public ViewResult Create()
         {
             return View();
         }
 
-        [Route("Home/Create")]
         [HttpPost]
+        [Route("Home/Create")]
         public IActionResult Create(Friend e)
         {
             if (ModelState.IsValid)
@@ -85,6 +84,33 @@ namespace net_core_web
             }
 
             return View();
+        }
+
+        [Route("Home/Modify/{id?}")]
+        public ViewResult Modify(int? id)
+        {
+            Friend details = new Friend();
+            details = friendStore.friendGetData(id ?? 1);
+            return View(details);
+        }
+
+        [HttpPost]
+        [Route("Home/Modify/{id}")]
+        public IActionResult Modify(Friend e)
+        {
+            if (ModelState.IsValid)
+            {
+                Friend friend = friendStore.modifyFriend(e);
+                return RedirectToAction("DataFriend", new { id = friend.Id });
+            }
+
+            return View();
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Friend friend = friendStore.deleteFriend(id);
+            return RedirectToAction("Index");
         }
     }
 }
