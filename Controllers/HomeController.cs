@@ -76,10 +76,15 @@ namespace net_core_web
 
         [Route("Home/Create")]
         [HttpPost]
-        public RedirectToActionResult Create(Friend e)
+        public IActionResult Create(Friend e)
         {
-            Friend friend = friendStore.newFriend(e);
-            return RedirectToAction("DataFriend", new { id = friend.Id });
+            if (ModelState.IsValid)
+            {
+                Friend friend = friendStore.newFriend(e);
+                return RedirectToAction("DataFriend", new { id = friend.Id });
+            }
+
+            return View();
         }
     }
 }

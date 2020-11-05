@@ -7,7 +7,6 @@ namespace net_core_web.Model
 {
     public enum Province
     {
-        None,
         Cali,
         Buenaventura,
         Medellin,
