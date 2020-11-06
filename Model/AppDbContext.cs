@@ -9,5 +9,17 @@ namespace net_core_web.Model
         }
 
         public DbSet<Friend> Friends { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Friend>().HasData(new Friend
+            {
+                Id = 1,
+                Name = "Test SQL",
+                City = Province.Buenaventura,
+                Email = "test@test.com"
+            }
+            );
+        }
     }
 }

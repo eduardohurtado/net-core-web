@@ -107,10 +107,9 @@ namespace net_core_web
             return View();
         }
 
-        public IActionResult Delete(int id)
+        public void Delete(int id)
         {
             Friend friend = friendStore.deleteFriend(id);
-            return RedirectToAction("Index");
         }
     }
 }
