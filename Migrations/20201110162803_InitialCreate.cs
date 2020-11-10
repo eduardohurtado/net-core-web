@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace net_core_web.Migrations
 {
-    public partial class initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +12,7 @@ namespace net_core_web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     Email = table.Column<string>(nullable: false),
                     City = table.Column<int>(nullable: false)
@@ -20,6 +21,11 @@ namespace net_core_web.Migrations
                 {
                     table.PrimaryKey("PK_Friends", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Friends",
+                columns: new[] { "Id", "City", "Email", "Name" },
+                values: new object[] { 1, 1, "test@test.com", "Test SQL" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
