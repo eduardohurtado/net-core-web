@@ -25,17 +25,13 @@ namespace net_core_web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddDbContextPool<AppDbContext>(options =>
-            //     options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection2")
-            //     )
-            // );
             services.AddDbContext<AppDbContext>(
                 p => p.UseNpgsql(_configuration.GetConnectionString("DefaultConnectionSQL"))
                 );
             services.AddMvc(options => options.EnableEndpointRouting = false);
             // Instance store just one time on.
-            services.AddSingleton<IFriendStore, MockFriendRepo>();
-            // services.AddScoped<IFriendStore, SQLFriendRepo>();
+            // services.AddSingleton<IFriendStore, MockFriendRepo>();
+            services.AddScoped<IFriendStore, SQLFriendRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

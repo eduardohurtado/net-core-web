@@ -25,6 +25,7 @@ namespace net_core_web
         // }
 
         // Attribute routing
+        [HttpGet]
         [Route("")]
         [Route("Home")]
         [Route("Home/Index")]
@@ -107,9 +108,11 @@ namespace net_core_web
             return View();
         }
 
-        public void Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            Friend friend = friendStore.deleteFriend(id);
+            Friend friend = friendStore.deleteFriend(31);
+
+            return RedirectToAction("Index");
         }
     }
 }

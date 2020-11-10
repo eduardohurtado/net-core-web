@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace net_core_web.Model
 {
@@ -15,6 +17,7 @@ namespace net_core_web.Model
 
         public Friend newFriend(Friend friend)
         {
+            friend.Id = getAllFriends().Max(e => e.Id) + 1;
             context.Friends.Add(friend);
             context.SaveChanges();
 
@@ -23,12 +26,14 @@ namespace net_core_web.Model
 
         public Friend deleteFriend(int id)
         {
-            Friend friend = context.Friends.Find(id);
-            if (friend != null)
-            {
-                context.Friends.Remove(friend);
-                context.SaveChanges();
-            }
+            Friend friend = context.Friends.Find(31);
+            // if (friend != null)
+            // {
+            // context.Friends.Attach(friend);
+            // context.Friends.Remove(friend);
+            context.Entry(friend).State = EntityState.Deleted;
+            context.SaveChanges();
+            // }
 
             return friend;
         }
