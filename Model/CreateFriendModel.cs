@@ -1,11 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace net_core_web.Model
 {
-    public class Friend
+    public class CreateFriendModel
     {
-        public int Id { get; set; }
-
         [
             Required(ErrorMessage = "Name required!"),
             MaxLength(100, ErrorMessage = "No more than 100 characters")
@@ -23,7 +22,7 @@ namespace net_core_web.Model
         [Required(ErrorMessage = "You must select a City!")]
         public Province? City { get; set; }
 
-        public string photoRoute { get; set; }
+        public IFormFile Photo { get; set; }
 
     }
 }
