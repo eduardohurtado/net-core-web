@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
 using net_core_web.Model;
 using net_core_web.ViewModels;
 
@@ -11,11 +13,13 @@ namespace net_core_web
     public class HomeController : Controller
     {
         private IFriendStore friendStore;
+        private IWebHostEnvironment _webHostEnvironment;
 
         // Constructor
-        public HomeController(IFriendStore FriendStore)
+        public HomeController(IFriendStore FriendStore, IWebHostEnvironment webHostEnvironment)
         {
             friendStore = FriendStore;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // Default controller method.
@@ -76,12 +80,30 @@ namespace net_core_web
 
         [HttpPost]
         [Route("Home/Create")]
-        public IActionResult Create(Friend e)
+        public IActionResult Create(CreateFriendModel e)
         {
             if (ModelState.IsValid)
             {
-                Friend friend = friendStore.newFriend(e);
-                return RedirectToAction("DataFriend", new { id = friend.Id });
+                // Friend friend = friendStore.newFriend(e);
+                // return RedirectToAction("DataFriend", new { id = friend.Id });
+
+                string guidImage = null;
+                if (e.Photo != null)
+                {
+                    string imagesPath = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                    guidImage = Guid.NewGuid().ToString() + e.Photo.FileName;
+                    string finalRoute = Path.Combine(imagesPath, guidImage);
+                    e.Photo.CopyTo(new FileStream(finalRoute, FileMode.Create));
+                }
+
+                Friend newFriend = new Friend();
+                newFriend.Name = e.Name;
+                newFriend.Email = e.Email;
+                newFriend.City = e.City;
+                newFriend.photoRoute = guidImage;
+
+                friendStore.newFriend(newFriend);
+                return RedirectToAction("Datafriend", new { id = newFriend.Id });
             }
 
             return View();

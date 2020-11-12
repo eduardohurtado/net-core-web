@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "MVC App";
+    var photoRoute = "~/images/" + (Model.Friend.photoRoute ?? "NET_core.png");
 }
 
 <div class="row justify-content-center m-3">
@@ -11,7 +12,7 @@
                 <h1>@Model.Friend.Name</h1>
             </div>
             <div class="card-body text-center">
-                <img class="card-img-top" src="~/images/NET_core.png" alt="Image" />
+                <img class="card-img-top" src="@photoRoute" asp-append-version="true" alt="Image" />
 
                 <h4>Friend ID: @Model.Friend.Id</h4>
                 <h4>Email: @Model.Friend.Email</h4>

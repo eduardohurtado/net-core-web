@@ -8,12 +8,13 @@
     @foreach (var friend in Model)
         {
             var friendID = friend.Id;
+            var photoRoute = "~/images/" + (friend.photoRoute ?? "NET_core.png");
             <div class="card m-3" >
                 <div class="card-header">
                     <h3>@friend.Name</h3>
                 </div>
-                <img    class="card-img-top"
-                        src="~/images/NET_core.png"
+                <img    class="card-img-top myImage"
+                        src="@photoRoute"
                         alt="image"
                         asp-append-version="true"
                 />
