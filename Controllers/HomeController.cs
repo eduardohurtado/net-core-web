@@ -16,7 +16,10 @@ namespace net_core_web
         private IWebHostEnvironment _webHostEnvironment;
 
         // Constructor
-        public HomeController(IFriendStore FriendStore, IWebHostEnvironment webHostEnvironment)
+        public HomeController(
+            IFriendStore FriendStore,
+            IWebHostEnvironment webHostEnvironment
+            )
         {
             friendStore = FriendStore;
             _webHostEnvironment = webHostEnvironment;
